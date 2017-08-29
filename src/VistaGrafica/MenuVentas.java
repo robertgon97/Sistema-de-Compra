@@ -143,6 +143,7 @@ public class MenuVentas extends javax.swing.JFrame {
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Generar una Venta");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         PanelPrincipal.setBackground(new java.awt.Color(255, 255, 255));
@@ -303,6 +304,11 @@ public class MenuVentas extends javax.swing.JFrame {
         BotonCompras.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         BotonCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/icons8-Comprar-48.png"))); // NOI18N
         BotonCompras.setText("COMPRAS");
+        BotonCompras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonComprasActionPerformed(evt);
+            }
+        });
         PanelAccesos.add(BotonCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 150, 80));
 
         BotonStock.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -310,6 +316,11 @@ public class MenuVentas extends javax.swing.JFrame {
         BotonStock.setText("STOCK");
         BotonStock.setMaximumSize(new java.awt.Dimension(133, 57));
         BotonStock.setMinimumSize(new java.awt.Dimension(133, 57));
+        BotonStock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonStockActionPerformed(evt);
+            }
+        });
         PanelAccesos.add(BotonStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 150, 80));
 
         BotonFactura.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -357,6 +368,18 @@ public class MenuVentas extends javax.swing.JFrame {
     private void BotonVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVentaActionPerformed
         JOptionPane.showMessageDialog(null,"Ya estas en el modulo Ventas");
     }//GEN-LAST:event_BotonVentaActionPerformed
+
+    private void BotonComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonComprasActionPerformed
+        MenuCompras compras = new MenuCompras();
+        compras.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_BotonComprasActionPerformed
+
+    private void BotonStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonStockActionPerformed
+        Stock stock = new Stock();
+        stock.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_BotonStockActionPerformed
 
     /**
      * @param args the command line arguments
