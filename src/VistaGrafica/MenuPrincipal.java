@@ -10,9 +10,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         
         Calendar c=Calendar.getInstance();
         DateFormat df1= DateFormat.getDateInstance(DateFormat.FULL);
-        //DateFormat hora= DateFormat.getTimeInstance(DateFormat.HOUR1_FIELD);
-        TextoFecha.setText("Venezuela, "+df1.format(c.getTime())); 
-        //TextoHora.setText(hora.format(c.getTime()));
+        TextoFecha.setText("Venezuela, "+df1.format(c.getTime()));
+        Calendar hora = Calendar.getInstance();
+        int hor =hora.get(Calendar.HOUR);
+        int minutos = hora.get(Calendar.MINUTE);
+        TextoHora.setText(hor+":"+minutos+"");
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -157,7 +159,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonUsuariosActionPerformed
-        // TODO add your handling code here:
+        CRUDusuarios usuarios = new CRUDusuarios();
+        usuarios.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BotonUsuariosActionPerformed
 
     private void BotonClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonClienteActionPerformed

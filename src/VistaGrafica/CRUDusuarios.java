@@ -249,14 +249,16 @@ public class CRUDusuarios extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelAccesos, javax.swing.GroupLayout.PREFERRED_SIZE, 569, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(PanelAccesos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 6, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonUsuariosActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null,"Ya estas en el modulo Usuarios");
     }//GEN-LAST:event_BotonUsuariosActionPerformed
 
     private void BotonClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonClienteActionPerformed
@@ -264,7 +266,9 @@ public class CRUDusuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonClienteActionPerformed
 
     private void BotonProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonProveedorActionPerformed
-        // TODO add your handling code here:
+        RegistroProveedores proveedores = new RegistroProveedores();
+        proveedores.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BotonProveedorActionPerformed
 
     private void BotonConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConfigActionPerformed
@@ -325,7 +329,20 @@ public class CRUDusuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonGuardarActionPerformed
 
     private void BotonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarActionPerformed
-        // Eliminar Usuarios
+        int resp=JOptionPane.showConfirmDialog(null,"¿Desea Eliminar Usuario?","Pregunta",0);//el cero quiere decir que si la respuesta es correcta es cero
+        if(resp==0){
+            try {
+                cnn=SQL.enlace(cnn);
+                sta=SQL.declaracion(sta);
+                String id=CampoID.getText();
+                String comando="DELETE FROM USUARIO WHERE id_usuario='"+id+"'";
+                sta.execute(comando);
+                JOptionPane.showConfirmDialog(null,"Usuario Eliminado Exitosamente!");
+                cnn.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null,"Error al eliminar" + ex);
+            }
+        }
     }//GEN-LAST:event_BotonEliminarActionPerformed
 
     private void BotonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonModificarActionPerformed
@@ -367,6 +384,7 @@ public class CRUDusuarios extends javax.swing.JFrame {
 
     private void BotonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonLimpiarActionPerformed
 	LimpiarBotones();
+        this.Activabotones(true,true,true);
     }//GEN-LAST:event_BotonLimpiarActionPerformed
 
     private void CampoRespuestaSeguridadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoRespuestaSeguridadActionPerformed
