@@ -94,6 +94,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         BotonVenta.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         BotonVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/icons8-Checkout-48.png"))); // NOI18N
         BotonVenta.setText("VENTAS");
+        BotonVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonVentaActionPerformed(evt);
+            }
+        });
         PanelAccesos.add(BotonVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 150, 70));
 
         BotonCompras.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -165,11 +170,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonUsuariosActionPerformed
 
     private void BotonClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonClienteActionPerformed
-        // TODO add your handling code here:
+        RegistroClientes clientes = new RegistroClientes();
+        clientes.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BotonClienteActionPerformed
 
     private void BotonProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonProveedorActionPerformed
-        // TODO add your handling code here:
+        RegistroProveedores proveedores = new RegistroProveedores();
+        proveedores.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BotonProveedorActionPerformed
 
     private void BotonConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConfigActionPerformed
@@ -180,6 +189,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         Acerca modal = new Acerca();
         modal.setVisible(true);
     }//GEN-LAST:event_BotonAcercadeActionPerformed
+
+    private void BotonVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVentaActionPerformed
+        MenuVentas vender = new MenuVentas();//Creamos la ventana
+        vender.setVisible(true); //Hacemos que se muestre
+        this.dispose();//Destruimos la ventana actual
+    }//GEN-LAST:event_BotonVentaActionPerformed
 
     public static void main(String args[]) {
         try {

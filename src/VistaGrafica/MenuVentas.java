@@ -1,5 +1,18 @@
 package VistaGrafica;
+
+import BasedeDatos.SQL; //funciones de la conexion 
+import java.awt.*;
+import java.sql.*;
+import java.util.logging.*;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 public class MenuVentas extends javax.swing.JFrame {
+    //Configuramos las variables de sesion
+    static Connection cnn=null;
+    static Statement sta=null;
+    static ResultSet rst=null;
+
 
     public MenuVentas() {
         initComponents();
@@ -142,7 +155,6 @@ public class MenuVentas extends javax.swing.JFrame {
         PanelPrincipal.add(TextoCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 130, 40));
 
         TextoProducto.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        TextoProducto.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Pablo\\Downloads\\Iconos java\\icons8-Recycling-48.png")); // NOI18N
         TextoProducto.setText("PRODUCTO");
         PanelPrincipal.add(TextoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 120, 40));
 
@@ -160,6 +172,7 @@ public class MenuVentas extends javax.swing.JFrame {
         PanelPrincipal.add(TextoTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, 110, 60));
 
         CampoSubTotal.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        CampoSubTotal.setEnabled(false);
         PanelPrincipal.add(CampoSubTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 100, 30));
 
         TextoSubTotal.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -168,9 +181,11 @@ public class MenuVentas extends javax.swing.JFrame {
         PanelPrincipal.add(TextoSubTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 120, 50));
 
         CampoTotal.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        CampoTotal.setEnabled(false);
         PanelPrincipal.add(CampoTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, 130, -1));
 
         CampoIva.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        CampoIva.setEnabled(false);
         PanelPrincipal.add(CampoIva, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 80, 20));
 
         TextoIva.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -180,17 +195,13 @@ public class MenuVentas extends javax.swing.JFrame {
 
         BotonEnviar.setBackground(new java.awt.Color(255, 255, 255));
         BotonEnviar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        BotonEnviar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Pablo\\Downloads\\Iconos java\\icons8-Checkout-48.png")); // NOI18N
         BotonEnviar.setText("VENTAS");
         BotonEnviar.setBorder(null);
         PanelPrincipal.add(BotonEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 500, 120, 50));
 
         TextoTitulo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        TextoTitulo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Pablo\\Downloads\\Iconos java\\icons8-Checkout-48.png")); // NOI18N
         TextoTitulo.setText("VENTAS");
         PanelPrincipal.add(TextoTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 130, 60));
-
-        IconoVenture.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Pablo\\Pictures\\venture.jpg")); // NOI18N
         PanelPrincipal.add(IconoVenture, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, -1, -1));
 
         jTable2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -234,10 +245,10 @@ public class MenuVentas extends javax.swing.JFrame {
         BotonBorrar.setText("BORRAR");
         PanelPrincipal.add(BotonBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 500, 140, 50));
 
-        ContenidoProducto.setText("jLabel31");
+        ContenidoProducto.setText("Contenido del Producto");
         PanelPrincipal.add(ContenidoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 230, 30));
 
-        ContenidoUsuario.setText("jLabel31");
+        ContenidoUsuario.setText("Contenido del Usuario");
         PanelPrincipal.add(ContenidoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 230, 30));
 
         getContentPane().add(PanelPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 640, 580));
@@ -282,6 +293,11 @@ public class MenuVentas extends javax.swing.JFrame {
         BotonVenta.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         BotonVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/icons8-Checkout-48.png"))); // NOI18N
         BotonVenta.setText("VENTAS");
+        BotonVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonVentaActionPerformed(evt);
+            }
+        });
         PanelAccesos.add(BotonVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 150, 70));
 
         BotonCompras.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -317,11 +333,15 @@ public class MenuVentas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonUsuariosActionPerformed
-        // TODO add your handling code here:
+        CRUDusuarios usuarios = new CRUDusuarios();
+        usuarios.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BotonUsuariosActionPerformed
 
     private void BotonProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonProveedorActionPerformed
-        // TODO add your handling code here:
+        RegistroProveedores proveedores = new RegistroProveedores();
+        proveedores.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BotonProveedorActionPerformed
 
     private void BotonConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConfigActionPerformed
@@ -329,8 +349,14 @@ public class MenuVentas extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonConfigActionPerformed
 
     private void BotonClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonClienteActionPerformed
-        // TODO add your handling code here:
+        RegistroClientes clientes = new RegistroClientes();
+        clientes.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BotonClienteActionPerformed
+
+    private void BotonVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVentaActionPerformed
+        JOptionPane.showMessageDialog(null,"Ya estas en el modulo Ventas");
+    }//GEN-LAST:event_BotonVentaActionPerformed
 
     /**
      * @param args the command line arguments

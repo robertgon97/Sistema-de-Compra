@@ -1,5 +1,5 @@
 package VistaGrafica;
-//Librerias que se utilizaran
+
 import BasedeDatos.SQL; //funciones de la conexion 
 import java.awt.*;
 import java.sql.*;
@@ -7,17 +7,18 @@ import java.util.logging.*;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-public class CRUDusuarios extends javax.swing.JFrame {
+public class RegistroClientes extends javax.swing.JFrame {
     //Configuramos las variables de sesion
     static Connection cnn=null;
     static Statement sta=null;
     static ResultSet rst=null;
-    
-    public CRUDusuarios() {
+
+
+    public RegistroClientes() {
         initComponents();
-        this.setLocationRelativeTo(null);//hacemos que la aplicacion se ejecute al centro de la pantalla
+        this.setLocationRelativeTo(null);
     }
-    void Activabotones(Boolean g,Boolean m,Boolean e){ // funcion o clase para cambiar propiedades a los botones con booleanos
+    void Activabotones(Boolean g,Boolean m,Boolean e){
 	BotonGuardar.setEnabled(g);
         BotonModificar.setEnabled(m);        
         BotonEliminar.setEnabled(e);
@@ -29,6 +30,8 @@ public class CRUDusuarios extends javax.swing.JFrame {
         CampoPreguntadeSeguridad.setText("");
         CampoRespuestaSeguridad.setText("");     
     }
+
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -60,8 +63,14 @@ public class CRUDusuarios extends javax.swing.JFrame {
         BotonLimpiar = new javax.swing.JButton();
         CampoID = new javax.swing.JTextField();
         CampoRespuestaSeguridad = new javax.swing.JPasswordField();
+        TextoPregseg1 = new javax.swing.JLabel();
+        TextoPregseg2 = new javax.swing.JLabel();
+        CampoPreguntadeSeguridad1 = new javax.swing.JTextField();
+        CampoPreguntadeSeguridad2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Registro de Clientes");
+        setResizable(false);
 
         PanelAccesos.setBackground(new java.awt.Color(255, 255, 255));
         PanelAccesos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -142,39 +151,39 @@ public class CRUDusuarios extends javax.swing.JFrame {
         PanelPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         IconoVenture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/venture.jpg"))); // NOI18N
-        PanelPrincipal.add(IconoVenture, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, -1, -1));
+        PanelPrincipal.add(IconoVenture, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 10, -1, -1));
 
         TituloCRUDusuarios.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         TituloCRUDusuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/icons8-Staff-48.png"))); // NOI18N
-        TituloCRUDusuarios.setText("USUARIOS");
-        PanelPrincipal.add(TituloCRUDusuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, -1, -1));
+        TituloCRUDusuarios.setText("Clientes");
+        PanelPrincipal.add(TituloCRUDusuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         TextoPregseg.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         TextoPregseg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/icons8_Question_48px.png"))); // NOI18N
-        TextoPregseg.setText("Pregunta de Seguridad:");
-        PanelPrincipal.add(TextoPregseg, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
+        TextoPregseg.setText("Correo");
+        PanelPrincipal.add(TextoPregseg, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, -1, -1));
 
         TextoUsuario.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         TextoUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/icons8-Name-48.png"))); // NOI18N
-        TextoUsuario.setText("Usuario:");
-        PanelPrincipal.add(TextoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
+        TextoUsuario.setText("Nombres");
+        PanelPrincipal.add(TextoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
         TextoRespSeg.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         TextoRespSeg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/icons8_Checked_Checkbox_48px_2.png"))); // NOI18N
-        TextoRespSeg.setText("Respuesta de Seguridad:");
-        PanelPrincipal.add(TextoRespSeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 380, -1, -1));
+        TextoRespSeg.setText("Telefono");
+        PanelPrincipal.add(TextoRespSeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, -1, -1));
 
         TextoContrasena.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         TextoContrasena.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/icons8-Password-48.png"))); // NOI18N
-        TextoContrasena.setText("Contraseña:");
-        PanelPrincipal.add(TextoContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, -1, -1));
+        TextoContrasena.setText("Apellidos");
+        PanelPrincipal.add(TextoContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, -1, -1));
 
         CampoContrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoContrasenaActionPerformed(evt);
             }
         });
-        PanelPrincipal.add(CampoContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, 210, 30));
+        PanelPrincipal.add(CampoContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 240, 220, 30));
 
         BotonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/icons8-Search-48.png"))); // NOI18N
         BotonBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -182,21 +191,21 @@ public class CRUDusuarios extends javax.swing.JFrame {
                 BotonBuscarActionPerformed(evt);
             }
         });
-        PanelPrincipal.add(BotonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 70, 50));
+        PanelPrincipal.add(BotonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 70, 50));
 
         CampoBusqueda.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        PanelPrincipal.add(CampoBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 170, 30));
+        PanelPrincipal.add(CampoBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 130, 30));
 
         CampoPreguntadeSeguridad.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        PanelPrincipal.add(CampoPreguntadeSeguridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 440, 170, 30));
+        PanelPrincipal.add(CampoPreguntadeSeguridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 430, 220, 30));
 
         TextoBuscar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         TextoBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/icons8-ID Card-48.png"))); // NOI18N
-        TextoBuscar.setText("Buscar por Usuario:");
-        PanelPrincipal.add(TextoBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
+        TextoBuscar.setText("Buscar por Cedula:");
+        PanelPrincipal.add(TextoBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, -1, -1));
 
         CampoUsuario.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        PanelPrincipal.add(CampoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 170, 30));
+        PanelPrincipal.add(CampoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 210, 30));
 
         BotonGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/icons8-Save-48.png"))); // NOI18N
         BotonGuardar.setText("Guardar");
@@ -235,14 +244,30 @@ public class CRUDusuarios extends javax.swing.JFrame {
         PanelPrincipal.add(BotonLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 500, -1, -1));
 
         CampoID.setEnabled(false);
-        PanelPrincipal.add(CampoID, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 80, -1));
+        PanelPrincipal.add(CampoID, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 80, -1));
 
         CampoRespuestaSeguridad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoRespuestaSeguridadActionPerformed(evt);
             }
         });
-        PanelPrincipal.add(CampoRespuestaSeguridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 440, 210, 30));
+        PanelPrincipal.add(CampoRespuestaSeguridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, 220, 30));
+
+        TextoPregseg1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        TextoPregseg1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/icons8_Question_48px.png"))); // NOI18N
+        TextoPregseg1.setText("Cedula");
+        PanelPrincipal.add(TextoPregseg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
+
+        TextoPregseg2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        TextoPregseg2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/icons8_Question_48px.png"))); // NOI18N
+        TextoPregseg2.setText("Direccion");
+        PanelPrincipal.add(TextoPregseg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
+
+        CampoPreguntadeSeguridad1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        PanelPrincipal.add(CampoPreguntadeSeguridad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 210, 30));
+
+        CampoPreguntadeSeguridad2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        PanelPrincipal.add(CampoPreguntadeSeguridad2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, 210, 30));
 
         PanelAccesos.add(PanelPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 640, 580));
 
@@ -256,20 +281,20 @@ public class CRUDusuarios extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(PanelAccesos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonUsuariosActionPerformed
-        JOptionPane.showMessageDialog(null,"Ya estas en el modulo Usuarios");
+        CRUDusuarios usuarios = new CRUDusuarios();
+        usuarios.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BotonUsuariosActionPerformed
 
     private void BotonClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonClienteActionPerformed
-        RegistroClientes clientes = new RegistroClientes();
-        clientes.setVisible(true);
-        this.dispose();
+        JOptionPane.showMessageDialog(null,"Ya estas en el modulo Clientes");
     }//GEN-LAST:event_BotonClienteActionPerformed
 
     private void BotonProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonProveedorActionPerformed
@@ -288,32 +313,32 @@ public class CRUDusuarios extends javax.swing.JFrame {
 
     private void BotonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarActionPerformed
         if(BotonBuscar.isEnabled()){
-        try {
-            String busca=CampoBusqueda.getText();
-            cnn=SQL.enlace(cnn);
-            sta=cnn.createStatement();
-            rst=sta.executeQuery("SELECT * FROM usuario");
-            boolean bandera=false;
-            while(rst.next()){
-                if(busca.equalsIgnoreCase(rst.getString(2))){
-                    CampoID.setText(rst.getString(1));
-                    CampoUsuario.setText(rst.getString(2));
-                    CampoContrasena.setText(rst.getString(3));
-                    CampoPreguntadeSeguridad.setText(rst.getString(4));
-                    CampoRespuestaSeguridad.setText(rst.getString(5));
-                    this.Activabotones(false,true,true);
-                    bandera=true;
-                    break;
+            try {
+                String busca=CampoBusqueda.getText();
+                cnn=SQL.enlace(cnn);
+                sta=cnn.createStatement();
+                rst=sta.executeQuery("SELECT * FROM cliente");
+                boolean bandera=false;
+                while(rst.next()){
+                    if(busca.equalsIgnoreCase(rst.getString(4))){
+                        CampoID.setText(rst.getString(1));
+                        CampoUsuario.setText(rst.getString(2));
+                        CampoContrasena.setText(rst.getString(3));
+                        CampoPreguntadeSeguridad.setText(rst.getString(4));
+                        CampoRespuestaSeguridad.setText(rst.getString(5));
+                        this.Activabotones(false,true,true);
+                        bandera=true;
+                        break;
+                    }
                 }
+                if(bandera==false){
+                    JOptionPane.showMessageDialog(null,"Cliente no Registrado");
+                    this.LimpiarBotones();
+                }
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "ERROR DE BUSQUEDA " + ex);
             }
-            if(bandera==false){
-                JOptionPane.showMessageDialog(null,"Nombre no Registrado");
-                this.LimpiarBotones();
-            }
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "ERROR DE BUSQUEDA " + ex);
         }
-    }
     }//GEN-LAST:event_BotonBuscarActionPerformed
 
     private void BotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGuardarActionPerformed
@@ -326,7 +351,7 @@ public class CRUDusuarios extends javax.swing.JFrame {
                 String contrasena = String.valueOf(CampoContrasena.getPassword());
                 String pregunta=CampoPreguntadeSeguridad.getText();
                 String respuesta = String.valueOf(CampoRespuestaSeguridad.getPassword());
-                String comando="INSERT INTO USUARIO VALUES(null,'"+usuario+"','"+contrasena+"','"+pregunta+"','"+respuesta+"')";
+                String comando="INSERT INTO cliente VALUES(null,'"+usuario+"','"+contrasena+"','"+pregunta+"','"+respuesta+"')";
                 sta.execute(comando);
                 cnn.close();
             } catch (SQLException ex) {
@@ -336,15 +361,15 @@ public class CRUDusuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonGuardarActionPerformed
 
     private void BotonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarActionPerformed
-        int resp=JOptionPane.showConfirmDialog(null,"¿Desea Eliminar Usuario?","Pregunta",0);//el cero quiere decir que si la respuesta es correcta es cero
+        int resp=JOptionPane.showConfirmDialog(null,"¿Desea Eliminar Cliente?","Pregunta",0);//el cero quiere decir que si la respuesta es correcta es cero
         if(resp==0){
             try {
                 cnn=SQL.enlace(cnn);
                 sta=SQL.declaracion(sta);
                 String id=CampoID.getText();
-                String comando="DELETE FROM USUARIO WHERE id_usuario='"+id+"'";
+                String comando="DELETE FROM cliente WHERE id_cliente='"+id+"'";
                 sta.execute(comando);
-                JOptionPane.showConfirmDialog(null,"Usuario Eliminado Exitosamente!");
+                JOptionPane.showConfirmDialog(null,"Cliente Eliminado Exitosamente!");
                 cnn.close();
             } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null,"Error al eliminar" + ex);
@@ -353,7 +378,7 @@ public class CRUDusuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonEliminarActionPerformed
 
     private void BotonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonModificarActionPerformed
-        int resp=JOptionPane.showConfirmDialog(null,"¿Desea Modificar el Producto?","Pregunta",0);//el cero quiere decir que si la respuesta es correcta es cero
+        int resp=JOptionPane.showConfirmDialog(null,"¿Desea Modificar el Cliente?","Pregunta",0);//el cero quiere decir que si la respuesta es correcta es cero
         boolean enviar = false;
         if(resp==0){
             try {
@@ -367,18 +392,21 @@ public class CRUDusuarios extends javax.swing.JFrame {
                 String comando="";
                 //Verificar si los datos no estan vacios
                 if (usuario != "" && contrasena !="" && pregunta !=""  && respuesta !=""){
-                    comando = "UPDATE usuario SET "
-                    + "usuario='"+usuario+"', "
-                    + "contrasena='"+contrasena+"', "
-                    + "pregseguridad='"+pregunta+"', "
-                    + "respseguridad='"+respuesta+"', "
-                    + "WHERE id_usuario='"+id+"' ";
+                    comando = "UPDATE cliente SET "
+                    + "nombre_cliente='"+usuario+"', "
+                    + "apellidos_cliente='"+contrasena+"', "
+                    + "cedula_cliente='"+pregunta+"', "
+                    + "telefono_cliente='"+respuesta+"', "
+                    + "correol_cliente='"+respuesta+"', "
+                    + "direccion_cliente='"+respuesta+"', "
+                    + "WHERE id_cliente='"+id+"' ";
                     enviar=true;
                     System.out.println(comando);
                 }else{JOptionPane.showMessageDialog(null,"Debes Llenar todos los Campos!");}
                 if (enviar==true){
                     sta.executeUpdate(comando);
                     cnn.close();
+                    JOptionPane.showMessageDialog(null,"Modificado Satisfactoriamente!");
                     LimpiarBotones();
                 }else {
                     JOptionPane.showMessageDialog(null,"Debes Llenar todos los Campos!");
@@ -390,7 +418,7 @@ public class CRUDusuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonModificarActionPerformed
 
     private void BotonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonLimpiarActionPerformed
-	LimpiarBotones();
+        LimpiarBotones();
         this.Activabotones(true,true,true);
     }//GEN-LAST:event_BotonLimpiarActionPerformed
 
@@ -404,8 +432,15 @@ public class CRUDusuarios extends javax.swing.JFrame {
         this.dispose();//Destruimos la ventana actual
     }//GEN-LAST:event_BotonVentaActionPerformed
 
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
-
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -414,20 +449,20 @@ public class CRUDusuarios extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CRUDusuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistroClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CRUDusuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistroClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CRUDusuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistroClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CRUDusuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistroClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CRUDusuarios().setVisible(true);
+                new RegistroClientes().setVisible(true);
             }
         });
     }
@@ -450,6 +485,8 @@ public class CRUDusuarios extends javax.swing.JFrame {
     private javax.swing.JPasswordField CampoContrasena;
     private javax.swing.JTextField CampoID;
     private javax.swing.JTextField CampoPreguntadeSeguridad;
+    private javax.swing.JTextField CampoPreguntadeSeguridad1;
+    private javax.swing.JTextField CampoPreguntadeSeguridad2;
     private javax.swing.JPasswordField CampoRespuestaSeguridad;
     private javax.swing.JTextField CampoUsuario;
     private javax.swing.JLabel IconoVenture;
@@ -458,6 +495,8 @@ public class CRUDusuarios extends javax.swing.JFrame {
     private javax.swing.JLabel TextoBuscar;
     private javax.swing.JLabel TextoContrasena;
     private javax.swing.JLabel TextoPregseg;
+    private javax.swing.JLabel TextoPregseg1;
+    private javax.swing.JLabel TextoPregseg2;
     private javax.swing.JLabel TextoRespSeg;
     private javax.swing.JLabel TextoUsuario;
     private javax.swing.JLabel TituloCRUDusuarios;
