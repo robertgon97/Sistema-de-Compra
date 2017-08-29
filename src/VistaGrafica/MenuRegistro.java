@@ -22,88 +22,196 @@ public class MenuRegistro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        BotonVender = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jTextField11 = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        BotonUsuarios = new javax.swing.JButton();
+        BotonCliente = new javax.swing.JButton();
+        BotonProveedor = new javax.swing.JButton();
+        BotonVentas = new javax.swing.JButton();
+        BotonCompras = new javax.swing.JButton();
+        BotonStock = new javax.swing.JButton();
+        BotonFactura = new javax.swing.JButton();
+        BotonConfig = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, 90));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel2.setText("Nombre");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 126, -1, 22));
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Pablo\\Downloads\\icons8-ID Card-48.png")); // NOI18N
+        jLabel16.setText("CEDULA");
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 130, 40));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel1.setText("Apellido");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, -1));
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Pablo\\Downloads\\Iconos java\\icons8-Recycling-48.png")); // NOI18N
+        jLabel17.setText("PRODUCTO");
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 120, 40));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel4.setText("Cedula");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 45, -1));
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel18.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Pablo\\Downloads\\icons8-Gold Bars-48.png")); // NOI18N
+        jLabel18.setText("CANTIDAD");
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 130, 40));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel5.setText("Correo Electronico");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, 22));
+        jTextField7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jPanel2.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 80, 20));
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 100, -1));
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel19.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Pablo\\Downloads\\icons8-Enter Pin-48.png")); // NOI18N
+        jLabel19.setText("TOTAL");
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 110, 60));
 
-        jTextField2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 100, -1));
+        jTextField8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jPanel2.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 80, 20));
 
-        jTextField3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel20.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Pablo\\Downloads\\icons8-Calculator-48.png")); // NOI18N
+        jLabel20.setText("SUB-TOTAL");
+        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 120, 50));
+
+        jTextField9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jPanel2.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 70, -1));
+
+        jTextField10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jPanel2.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 80, 20));
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel21.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Pablo\\Downloads\\icons8-Money Bag-48.png")); // NOI18N
+        jLabel21.setText("IVA");
+        jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 100, 50));
+
+        BotonVender.setBackground(new java.awt.Color(255, 255, 255));
+        BotonVender.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        BotonVender.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Pablo\\Downloads\\Iconos java\\icons8-Checkout-48.png")); // NOI18N
+        BotonVender.setText("Vender");
+        BotonVender.setBorder(null);
+        jPanel2.add(BotonVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 120, 50));
+        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, 40));
+        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 50, 40));
+        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 50, 40));
+        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, -1, -1));
+        jPanel2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, 40));
+        jPanel2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
+
+        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel28.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Pablo\\Downloads\\Iconos java\\icons8-Checkout-48.png")); // NOI18N
+        jLabel28.setText("VENTAS");
+        jPanel2.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 130, 60));
+        jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, -1, -1));
+
+        jLabel30.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Pablo\\Pictures\\venture.jpg")); // NOI18N
+        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, -1, -1));
+
+        jTextField11.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jPanel2.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 80, 20));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 620, 410));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BotonUsuarios.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        BotonUsuarios.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Pablo\\Downloads\\icons8-Staff-48.png")); // NOI18N
+        BotonUsuarios.setText("USUARIOS");
+        BotonUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                BotonUsuariosActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, 100, -1));
+        jPanel3.add(BotonUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 50));
 
-        jTextField4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 170, -1));
+        BotonCliente.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        BotonCliente.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Pablo\\Downloads\\icons8-User Group Man Man-48.png")); // NOI18N
+        BotonCliente.setText("CLIENTE");
+        BotonCliente.setMaximumSize(new java.awt.Dimension(133, 57));
+        BotonCliente.setMinimumSize(new java.awt.Dimension(133, 57));
+        jPanel3.add(BotonCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 150, 50));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Enter_ON.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, 94, 37));
+        BotonProveedor.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        BotonProveedor.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Pablo\\Downloads\\Iconos java\\icons8-Camión-48.png")); // NOI18N
+        BotonProveedor.setText("PROVEEDOR");
+        BotonProveedor.setToolTipText("");
+        BotonProveedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonProveedorActionPerformed(evt);
+            }
+        });
+        jPanel3.add(BotonProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 150, 50));
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, -1, 41));
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, 90));
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, 40));
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, 37));
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
+        BotonVentas.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        BotonVentas.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Pablo\\Downloads\\icons8-Checkout-48.png")); // NOI18N
+        BotonVentas.setText("VENTAS");
+        jPanel3.add(BotonVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 150, 50));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 490));
+        BotonCompras.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        BotonCompras.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Pablo\\Downloads\\Iconos java\\icons8-Comprar-48.png")); // NOI18N
+        BotonCompras.setText("COMPRAS");
+        jPanel3.add(BotonCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 150, 50));
+
+        BotonStock.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        BotonStock.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Pablo\\Downloads\\icons8-Move by Trolley-48.png")); // NOI18N
+        BotonStock.setText("STOCK");
+        BotonStock.setMaximumSize(new java.awt.Dimension(133, 57));
+        BotonStock.setMinimumSize(new java.awt.Dimension(133, 57));
+        jPanel3.add(BotonStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 150, 50));
+
+        BotonFactura.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        BotonFactura.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Pablo\\Downloads\\icons8-Bill-48.png")); // NOI18N
+        BotonFactura.setText("FACTURA");
+        jPanel3.add(BotonFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 150, 50));
+
+        BotonConfig.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        BotonConfig.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan Pablo\\Downloads\\icons8-Automation-48.png")); // NOI18N
+        BotonConfig.setText("CONFIG");
+        BotonConfig.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonConfigActionPerformed(evt);
+            }
+        });
+        jPanel3.add(BotonConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 150, 60));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void BotonUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonUsuariosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_BotonUsuariosActionPerformed
+
+    private void BotonProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonProveedorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonProveedorActionPerformed
+
+    private void BotonConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConfigActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonConfigActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,21 +249,37 @@ public class MenuRegistro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JButton BotonCliente;
+    private javax.swing.JButton BotonCompras;
+    private javax.swing.JButton BotonConfig;
+    private javax.swing.JButton BotonFactura;
+    private javax.swing.JButton BotonProveedor;
+    private javax.swing.JButton BotonStock;
+    private javax.swing.JButton BotonUsuarios;
+    private javax.swing.JButton BotonVender;
+    private javax.swing.JButton BotonVentas;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }
